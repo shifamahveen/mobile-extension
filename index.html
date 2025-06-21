@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Autofill</title>
+  <link rel="manifest" href="manifest.json">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+    }
+
+    label, input {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    input {
+      padding: 0.5rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    #dataForm > div {
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <h2>Smart Form Autofill</h2>
+  <form id="dataForm"></form>
+  <script src="autofill.js"></script>
+</body>
+</html>
