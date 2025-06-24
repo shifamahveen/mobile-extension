@@ -3,34 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Smart Autofill</title>
+  <title>DigitalOcean Autofill Form</title>
   <link rel="manifest" href="manifest.json">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 2rem;
+    body { font-family: sans-serif; padding: 20px; }
+    label { display: block; margin-top: 15px; font-weight: bold; }
+    input { width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box; }
+    .suggestion-box {
+      background: #f0f0f0; border: 1px solid #ccc; padding: 6px 10px;
+      cursor: pointer; position: absolute; top: 100%; left: 0;
+      width: 100%; box-sizing: border-box; z-index: 10;
     }
-
-    label, input {
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-
-    input {
-      padding: 0.5rem;
-      width: 100%;
-      box-sizing: border-box;
-    }
-
-    #dataForm > div {
-      margin-bottom: 1.5rem;
-      position: relative;
-    }
+    button { margin-top: 20px; padding: 10px 20px; }
   </style>
 </head>
 <body>
-  <h2>Smart Form Autofill</h2>
+  <h2>Autofill Form from DigitalOcean JSON</h2>
   <form id="dataForm"></form>
+
   <script src="autofill.js"></script>
 </body>
 </html>
