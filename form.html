@@ -41,5 +41,21 @@
 
     <button type="submit">Submit</button>
   </form>
+
+  <!-- ✅ ADD THIS SCRIPT JUST BEFORE THE CLOSING </body> TAG -->
+  <script>
+    document.querySelectorAll("input").forEach(input => {
+      input.addEventListener("focus", () => {
+        const label = input.previousElementSibling?.innerText?.trim();
+        if (label) {
+          navigator.clipboard.writeText(label).then(() => {
+            console.log("Copied label to clipboard:", label);
+          }).catch(err => {
+            console.error("Clipboard write failed:", err);
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
