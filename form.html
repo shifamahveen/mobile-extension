@@ -8,11 +8,12 @@
   <style>
     body { font-family: sans-serif; padding: 20px; }
     label { display: block; margin-top: 15px; font-weight: bold; text-transform: uppercase; }
-    input { width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box; }
-    .suggestion-box {
-      background: #f0f0f0; border: 1px solid #ccc; padding: 6px 10px;
-      cursor: pointer; position: absolute; top: 100%; left: 0;
-      width: 100%; box-sizing: border-box; z-index: 10;
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      box-sizing: border-box;
+      text-transform: none;
     }
     button { margin-top: 20px; padding: 10px 20px; }
   </style>
@@ -22,40 +23,24 @@
 
   <form id="autofill-form">
     <label for="customer-name">Customer Name</label>
-    <input type="text" id="customer-name" name="customer-name" placeholder="customer name" />
+    <input type="text" id="customer-name" name="Customer Name" placeholder="Customer Name" />
 
     <label for="model">Model</label>
-    <input type="text" id="model" name="model" placeholder="model" />
+    <input type="text" id="model" name="Model" placeholder="Model" />
 
     <label for="booking-amount">Booking Amount</label>
-    <input type="text" id="booking-amount" name="booking-amount" placeholder="booking amount" />
+    <input type="text" id="booking-amount" name="Booking Amount" placeholder="Booking Amount" />
 
     <label for="age">Age</label>
-    <input type="number" id="age" name="age" placeholder="age" />
+    <input type="text" id="age" name="Age" placeholder="Age" />
 
     <label for="docket-no">Docket No</label>
-    <input type="text" id="docket-no" name="docket-no"  placeholder="docket no"/>
+    <input type="text" id="docket-no" name="Docket No" placeholder="Docket No" />
 
     <label for="edp-name">EDP Name</label>
-    <input type="text" id="edp-name" name="edp-name" placeholder="edp name" />
+    <input type="text" id="edp-name" name="EDP Name" placeholder="EDP Name" />
 
     <button type="submit">Submit</button>
   </form>
-
-  <!-- ✅ ADD THIS SCRIPT JUST BEFORE THE CLOSING </body> TAG -->
-  <script>
-    document.querySelectorAll("input").forEach(input => {
-      input.addEventListener("focus", () => {
-        const label = input.previousElementSibling?.innerText?.trim();
-        if (label) {
-          navigator.clipboard.writeText(label).then(() => {
-            console.log("Copied label to clipboard:", label);
-          }).catch(err => {
-            console.error("Clipboard write failed:", err);
-          });
-        }
-      });
-    });
-  </script>
 </body>
 </html>
